@@ -14,22 +14,13 @@
 }
 
 .item{
+
     width:calc(25% - 7px);
     aspect-ratio: 6 / 5;
-   
     position: relative;
-
     border-radius: 10px;
-
-    overflow: hidden;
+    overflow: hidden; /*이미지가 아이템 넘치지 않게*/
     margin-bottom: 15px;
-
-    
-
-  
-   
- 
-
 
 }
 
@@ -39,12 +30,6 @@
     width: 100%;
     height: 100%;
     
-    
-  
-   
-
-   
-
     /*z-index가 자동 auto*/
 
 }
@@ -82,18 +67,19 @@
 .textBox__name{
     font-size: 22px;
     font-weight: 500;
-    opacity: 0;
+    opacity: 0;  /*0으로 하면 폰트글씨가 보이질 않음*/
+    transform: translateY(50px); /*이름 숨기기용*/
 
 }
 
 .textBox__price{
     font-weight: 400;
-    opacity: 0;
-
+    opacity: 0; /*0으로 하면 폰트글씨가 보이질 않음*/
+    transform: translateY(50px); /*가격 숨기기용*/
 }
 
 .item:after{ /*회색배경(아이템 위에 덮어쓰기)*/
-    content: "";
+    content: ""; /*after를 쓰기위해선 content가 무조건 필요하다.*/
     display: block;
     background-color: rgba(0,0,0,0.2);
     width: 100%;
@@ -118,7 +104,8 @@
 }
 
 .item:hover .textBox__name{ /*아이템 박스위에 오버되었을때 텍스트박스 이름변경*/
-    opacity: 1;
+    opacity: 1;/*마우스를 올렸을때 폰트가 보이게함*/
+    transform: translateY(0px);/*마우스를 올렸을때 폰트가 위에서 아래로*/
 
 
 
@@ -126,7 +113,8 @@
 
 .item:hover .textBox__price{
 
-    opacity: 1;
+    opacity: 1;  /*마우스를 올렸을때 폰트가 보이게함*/
+    transform: translateY(0px); /*마우스를 올렸을때 폰트가 위에서 아래로*/
 }
 
 .item:after,/*트렌지션 다중선택 적용*/
@@ -135,5 +123,11 @@
 .item .textBox__price{
 
     transition: all 0.6s ease-in-out;
+
+}
+
+.item .textBox__price{
+
+   transition-delay: 0.15s;/*가격정보 딜레이 설정*/
 
 }
