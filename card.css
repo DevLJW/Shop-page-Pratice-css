@@ -13,19 +13,33 @@
     align-items: flex-start;
     flex-wrap: wrap; */
 
+    padding: 50px;
+ 
+    
+   
+  
+
+    
+
+   
+   
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
+    grid-gap: 7px;
+    justify-content: center;
+    align-content: center;
+ 
 }
 
 .item{
 
     /* width:calc(25% - 7px); */
-    aspect-ratio: 6 / 5;
+    aspect-ratio: 6 / 5;/*가로 세로 비율 유지*/
     position: relative;
     border-radius: 10px;
     overflow: hidden; /*이미지가 아이템 넘치지 않게*/
-    margin-bottom: 15px;
+    
 
 }
 
@@ -136,3 +150,5 @@
    transition-delay: 0.15s;/*가격정보 딜레이 설정*/
 
 }
+
+
