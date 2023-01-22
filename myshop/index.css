@@ -51,9 +51,7 @@ a{
 }
 
 
-.mainBanner:hover .text{
-    animation: title 3s ease-in-out;
-}
+
 
 .container{
 
@@ -87,9 +85,9 @@ a{
 
 .mainMenu{
    
-    
-  padding: 10px;
-  border-radius: 5px;
+ 
+  padding: 0px;
+  border-radius: 0px;
   background-color: orange;
    
 }
@@ -121,12 +119,7 @@ a{
       
  }
 
- .mainMenu ul li a:hover{
 
-    background-color: rgb(255,145,0);
-    padding-left: 20px;
-
- }
 
  .writeBtnBox{
     margin-top: 10px;
@@ -149,11 +142,7 @@ a{
 
  }
 
- .writeBtn:hover{
-    background-color: white;
-    color: #333333;
-   
- }
+
 
 .writeBtn .arrow{
    display: inline-block;
@@ -161,11 +150,7 @@ a{
    transition: all 0.4s ease-in-out;
  }
 
-.writeBtn .arrow:hover{
-    transform: translateX(50px);
 
-
- }
 
 
 
@@ -195,9 +180,10 @@ a{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr);
     grid-gap: 7px;
-    justify-content: center;
-    align-content: center;
+
     padding-left: 15px;
+    justify-items: center;
+    align-items: center;
  
 }
 
@@ -208,6 +194,7 @@ a{
     position: relative;
     border-radius: 10px;
     overflow: hidden; /*이미지가 아이템 넘치지 않게*/
+    
     
 
 }
@@ -281,29 +268,7 @@ a{
 
 }
 
-.item:hover:after{
-    opacity: 1;
-}
 
-.item:hover .imageBox img{
-    transform: scale(1.1);
-    filter: blur(3px);
-
-}
-
-.item:hover .textBox__name{ /*아이템 박스위에 오버되었을때 텍스트박스 이름변경*/
-    opacity: 1;/*마우스를 올렸을때 폰트가 보이게함*/
-    transform: translateY(0px);/*마우스를 올렸을때 폰트가 위에서 아래로*/
-
-
-
-}
-
-.item:hover .textBox__price{
-
-    opacity: 1;  /*마우스를 올렸을때 폰트가 보이게함*/
-    transform: translateY(0px); /*마우스를 올렸을때 폰트가 위에서 아래로*/
-}
 
 .item:after,/*트렌지션 다중선택 적용*/
 .item .imageBox img,
@@ -319,3 +284,179 @@ a{
    transition-delay: 0.15s;/*가격정보 딜레이 설정*/
 
 }
+
+@media screen and (max-width: 767px) {
+        /* 모바일 */
+    .mainBanner{
+        height: 160px;
+        margin-bottom: 0px;
+        
+    }    
+
+    .mainBanner .text{
+        font-size: 26px;
+    }
+
+    .wrapper{
+    
+
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        
+
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    
+
+    .writeBtn{
+        display: none;
+
+
+    }
+
+    .wrapper{
+        
+        padding: 0px;
+        
+    
+    }
+
+    .mainMenu ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    .mainMenu{
+
+        margin-top: 10px;
+    }
+
+
+    .mainMenu ul li a{
+
+        font-size: 14px;
+        padding: 15px;
+
+    }
+
+    .itemwrap{
+
+        width: 100%;
+  
+    
+        
+       
+    }
+
+    .itemWrap{
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(6,1fr);
+        grid-gap: 7px;
+        /* padding-left: 0px; */
+       
+        justify-items: center;
+        align-items: center;
+        margin-top: 3px;
+     
+      
+        
+       
+   
+      
+    
+    }
+    .item{
+
+         width: calc(80%);
+        margin-top: 3px;
+         overflow: visible;
+       
+         
+       
+        
+       
+      
+    }
+
+    .textBox{
+        position: relative;
+
+      
+    }
+
+
+
+}
+
+
+@media screen and (min-width: 767px) and  (max-width: 1024px){
+    /* tablet */
+    }
+
+
+
+
+    @media screen and (min-width: 1024px){ /*hover 효과는 모바일 적용X PC에서만*/
+        
+
+        
+        .mainMenu ul li a:hover{
+
+            background-color: rgb(255,145,0);
+            padding-left: 20px;
+        
+         }
+
+         .writeBtn:hover{
+            background-color: white;
+            color: #333333;
+           
+         }
+        
+        .writeBtn .arrow:hover{
+            transform: translateX(50px);
+        
+        
+         }
+        
+         .mainBanner:hover .text{
+            animation: title 3s ease-in-out;
+        }
+
+        .item:hover:after{
+            opacity: 1;
+        }
+        
+        .item:hover .imageBox img{
+            transform: scale(1.1);
+            filter: blur(3px);
+        
+        }
+        
+        .item:hover .textBox__name{ /*아이템 박스위에 오버되었을때 텍스트박스 이름변경*/
+            opacity: 1;/*마우스를 올렸을때 폰트가 보이게함*/
+            transform: translateY(0px);/*마우스를 올렸을때 폰트가 위에서 아래로*/
+        
+        
+        
+        }
+        
+        .item:hover .textBox__price{
+        
+            opacity: 1;  /*마우스를 올렸을때 폰트가 보이게함*/
+            transform: translateY(0px); /*마우스를 올렸을때 폰트가 위에서 아래로*/
+        }
+
+        }
+       
